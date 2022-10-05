@@ -12,11 +12,18 @@ export const listUsers : User[] = [
 
 app.post('/users', userRoutes);
 
-app.get('/:id', userRoutes);
+app.get('/users/:id', userRoutes);
 
-app.get('/', (req : Request, res : Response) => {
+app.update('/users/:id', userRoutes);
 
-});
+app.delete('/users/:id', userRoutes);
 
+app.post('/:userId/transactions', userRoutes);
+
+app.get('/:userId/transactions/:id', userRoutes);
+
+app.get('/:userId/transactions', userRoutes);
+
+app.delete('/:userId/transactions/:id', userRoutes);
 
 app.listen(port, () => {});
